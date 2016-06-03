@@ -1,0 +1,285 @@
+@import url(normalize.css);
+@import url(https://fonts.googleapis.com/css?family=Sintony:400,700|Poppins:400,300);
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  font-family: 'Poppins';
+  font-size: 16px;
+  background: #F4F4F4;
+}
+
+.white {
+  color: #FEFEFE;
+}
+
+hr {
+  width: 50%;
+  position: relative;
+  margin: 2em auto;
+}
+
+h1, h2 {
+  padding: 0;
+  margin: 0;
+  font-family: 'Sintony';
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1em;
+  color: #00354f;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 2.5em;
+  text-align: center;
+  padding: 1.1em 0;
+  color: #008BCF;
+}
+
+h2 span {
+  color: #E76114;
+}
+
+#menu {
+  min-width: 300px;
+  height: 100vh;
+  position: relative;
+}
+
+#menu #fixed {
+  position: fixed;
+  padding: 35px 42px;
+  height: 100vh;
+  background-size: cover;
+}
+
+#menu #fixed figure {
+  margin: 5em 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+#menu #fixed #nav ul {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#menu #fixed #nav ul li {
+  padding: 10px;
+  transition: .4s ease;
+}
+
+#menu #fixed #nav ul li:hover {
+  background: #008BCF;
+}
+
+#menu #fixed #nav ul li:hover a {
+  color: #FEFEFE;
+}
+
+#menu #fixed #nav ul li a {
+  color: #5b5b5b;
+  transition: .2s ease;
+}
+
+#pagina {
+  width: 100%;
+  height: 100vh;
+  background: #FEFEFE;
+}
+
+section#header {
+  background: url("/img/1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 900px;
+  display: flex;
+  align-items: center;
+}
+
+section#header article {
+  padding: 0 2em 0 4em;
+}
+
+section#header article p {
+  width: 600px;
+  color: #F4F4F4;
+  line-height: 20px;
+  font-size: .9em;
+}
+
+section#soluciones {
+  background: #FEFEFE;
+}
+
+section#soluciones article ul {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+section#soluciones article ul li {
+  padding: 2em 0;
+  width: 330px;
+}
+
+section#soluciones article ul li .item {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  background: #FAA83A;
+  border-radius: 50%;
+}
+
+section#soluciones article ul li p {
+  text-align: center;
+  color: #0097DC;
+  padding: .5em 1em;
+  font-size: .9em;
+}
+
+section#soluciones article ul a {
+  padding: 10px;
+  border: 2px #E76114 solid;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 1em;
+  background: #E76114;
+  margin-bottom: 2em;
+  color: #FEFEFE;
+  transition: .3s;
+}
+
+section#soluciones article ul a:hover {
+  color: #E76114;
+  background: #FEFEFE;
+}
+
+section#nuestra {
+  background: url("/img/4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+}
+
+section#empre {
+  background: #FEFEFE;
+  overflow: hidden;
+}
+
+section#empre article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+section#empre article .text-collum {
+  max-width: 600px;
+  width: 100%;
+}
+
+section#empre article .text-collum a {
+  padding: 10px;
+  border: 2px #E76114 solid;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 1em;
+  background: #E76114;
+  margin-bottom: 2em;
+  color: #FEFEFE;
+  transition: .3s;
+}
+
+section#empre article .text-collum a:hover {
+  color: #E76114;
+  background: #FEFEFE;
+}
+
+section#empre article .text-collum ul {
+  margin-bottom: 5em;
+}
+
+section#empre article .text-collum ul li {
+  list-style: square;
+}
+
+section#empre article figure {
+  max-width: 500px;
+  width: 100%;
+  margin: 20px;
+}
+
+section#nosotros {
+  background: #008BCF;
+}
+
+section#nosotros article {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section#nosotros article ol {
+  margin: 0 10% auto;
+  position: relative;
+  counter-reset: item;
+  list-style: none;
+  max-width: 600px;
+}
+
+section#nosotros article ol li {
+  color: #F4F4F4;
+  line-height: 20px;
+  font-size: .9em;
+  padding: 10px 0;
+}
+
+section#nosotros article ol li:before {
+  display: inline-block;
+  content: counter(item) " ";
+  counter-increment: item;
+  background-color: #00354f;
+  color: #FEFEFE;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-right: .4em;
+}
+
+footer {
+  background: #00354f;
+  height: 100px;
+}
