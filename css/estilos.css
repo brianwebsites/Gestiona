@@ -110,7 +110,7 @@ h2 span {
 }
 
 section#header {
-  background: url("/img/1.png");
+  background: url("../img/1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -180,7 +180,7 @@ section#soluciones article ul a:hover {
 }
 
 section#nuestra {
-  background: url("/img/4.png");
+  background: url("../img/4.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
