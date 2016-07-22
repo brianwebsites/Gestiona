@@ -1,5 +1,16 @@
+@charset "UTF-8";
 @import url(normalize.css);
 @import url(https://fonts.googleapis.com/css?family=Sintony:400,700|Poppins:400,300);
+@media (max-width: 1024px) {
+  #pagina section#header article {
+    transform: scale(0.9);
+    padding: 0 0 0 2.5em;
+  }
+  section#empre article figure {
+    order: -1;
+  }
+}
+
 * {
   list-style: none;
   padding: 0;
@@ -60,47 +71,82 @@ h2 span {
 }
 
 #menu {
-  min-width: 300px;
-  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  padding: 0 5%;
+  z-index: 10;
+  background: transparent;
+  line-height: 4em;
+  transition: 0.5s ease-out;
+}
+
+#menu .menu-contenedor {
   position: relative;
 }
 
-#menu #fixed {
-  position: fixed;
-  padding: 35px 42px;
-  height: 100vh;
-  background-size: cover;
+#menu input {
+  display: none;
 }
 
-#menu #fixed figure {
-  margin: 5em 0;
-  text-align: center;
-  font-weight: 300;
-  font-size: 14px;
+#menu label {
+  visibility: hidden;
 }
 
-#menu #fixed #nav ul {
-  text-align: center;
+#menu ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu li a {
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-#menu #fixed #nav ul li {
-  padding: 10px;
-  transition: .4s ease;
-}
-
-#menu #fixed #nav ul li:hover {
-  background: #008BCF;
-}
-
-#menu #fixed #nav ul li:hover a {
+  font-size: 0.8em;
   color: #FEFEFE;
+  position: relative;
+  transition: 0.2s;
 }
 
-#menu #fixed #nav ul li a {
-  color: #5b5b5b;
-  transition: .2s ease;
+#menu li a::before {
+  content: "";
+  bottom: -10px;
+  display: block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  transition: 0.2s;
+  width: 0%;
+}
+
+#menu li a:hover::before {
+  background: #008BCF;
+  width: 100%;
+  left: 0;
+}
+
+.menu-js {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.menu-js li a {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: #008BCF !important;
+}
+
+.menu-logo-v {
+  background-image: url("../img/gestiona.svg");
+  background-repeat: no-repeat;
+  background-position: 0;
+  width: 150px;
+  height: 65px;
+  margin: .2em 20vw 0 0;
 }
 
 #pagina {
@@ -110,17 +156,19 @@ h2 span {
 }
 
 section#header {
-  background: url("../img/1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 900px;
+  width: 100%;
+  height: 100%;
+  max-height: 800px;
+  position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 section#header article {
-  padding: 0 2em 0 4em;
+  position: relative;
+  z-index: 2;
+  padding: 0 2em 0 6em;
 }
 
 section#header article p {
@@ -128,6 +176,60 @@ section#header article p {
   color: #F4F4F4;
   line-height: 20px;
   font-size: .9em;
+}
+
+/*Slider*/
+#c-slider {
+  z-index: 1;
+  margin: auto;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#c-slider #slider {
+  display: flex;
+  width: 400%;
+}
+
+#c-slider #slider section {
+  width: 100%;
+  display: flex;
+}
+
+#c-slider #slider section img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#btn-prev, #btn-next {
+  width: 40px;
+  height: 40px;
+  color: #00354f;
+  background: rgba(254, 254, 254, 0.6);
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 45px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: .4s;
+}
+
+#btn-prev:hover, #btn-next:hover {
+  background: #FEFEFE;
+}
+
+#btn-prev {
+  left: 10px;
+}
+
+#btn-next {
+  right: 10px;
 }
 
 section#soluciones {
@@ -146,18 +248,38 @@ section#soluciones article ul li {
   width: 330px;
 }
 
+section#soluciones article ul li:first-child {
+  transition: .3s;
+}
+
+section#soluciones article ul li:first-child a:hover {
+  position: relative;
+  transition: .3s;
+}
+
+section#soluciones article ul li:first-child a:hover::before {
+  content: 'Próximamente';
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 3.3em;
+  width: 100%;
+  height: 100%;
+  background: #cc0000;
+  color: #FEFEFE;
+  transition: .3s;
+}
+
 section#soluciones article ul li .item {
   margin: auto;
   width: 200px;
   height: 200px;
   background: #FAA83A;
-  border-radius: 50%;
 }
 
 section#soluciones article ul li p {
   text-align: center;
-  color: #0097DC;
-  padding: .5em 1em;
+  padding: 2em 1em;
   font-size: .9em;
 }
 
@@ -279,7 +401,92 @@ section#nosotros article ol li:before {
   margin-right: .4em;
 }
 
+section#mapa {
+  text-align: center;
+}
+
+section#mapa #map {
+  width: 100%;
+  height: 500px;
+}
+
+section#mapa p, section#mapa ul {
+  font-size: .9em;
+}
+
+section#mapa ul li a {
+  color: #E76114;
+}
+
+section#mapa ul li span {
+  font-weight: bold;
+  color: #008BCF;
+}
+
+article#formulario .content-form {
+  margin: auto;
+  width: 800px;
+  min-width: 500px;
+  text-align: left;
+}
+
+article#formulario .content-form .linea {
+  display: flex;
+  margin: 1em 0;
+}
+
+article#formulario .content-form .linea .input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 .5em;
+}
+
+article#formulario .content-form .linea .input-group label {
+  color: #757575;
+  padding: 5px;
+}
+
+article#formulario .content-form .linea .input-group input, article#formulario .content-form .linea .input-group textarea {
+  border-radius: 10px;
+  border: none;
+  background: #e7e7e7;
+  padding: 5px 10px;
+  transition: .2s;
+  width: 100%;
+  color: #333;
+}
+
+article#formulario .content-form .linea .input-group input:focus, article#formulario .content-form .linea .input-group textarea:focus {
+  background: #ccc;
+  outline: none;
+}
+
+article#formulario .content-form .linea .input-group textarea {
+  height: 120px;
+}
+
+article#formulario .content-form .linea .input-group .boton {
+  margin-top: 1em;
+  background: #E76114;
+  width: auto;
+  color: #FEFEFE;
+  border-radius: 0;
+  padding: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+article#formulario .content-form .linea .input-group .boton:focus {
+  background: #E76114;
+}
+
+article#formulario .content-form .linea .input-group .boton:active {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 2px inset;
+}
+
 footer {
+  margin-top: 50px;
   background: #00354f;
-  height: 100px;
+  height: 40px;
 }
