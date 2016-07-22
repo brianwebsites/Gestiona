@@ -7,29 +7,37 @@
     <link rel="stylesheet" href="css/estilos.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="js/js.js"></script>
+    <script src="js/google.js"></script>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     <title>Gestiona</title>
   </head>
   <body>
     <div id="menu">
-      <div id="fixed">
-        <figure><a href="#"><img src="img/gestiona.svg" alt="Gestiona"/></a>
-          <figcaption>Slogan Aquí</figcaption>
-        </figure>
-        <div id="nav">
-          <ul>
-            <li><a href="#header">Inicio</a></li>
-            <li><a href="#soluciones">Soluciones</a></li>
-            <li><a href="#nuestra">Nuestra Experiencia</a></li>
-            <li><a href="#empre">¿Por qué Nosotros?</a></li>
-            <li><a href="#contacto">Contáctenos</a></li>
-          </ul>
-        </div>
-      </div>
+      <div class="menu-contenedor"><a href="#">
+          <div id="menu-logo"></div></a></div>
+      <input type="checkbox" id="menu-bar"/>
+      <label for="menu-bar" class="icon-menu"></label>
+      <ul>
+        <li> <a href="#header">Inicio</a></li>
+        <li> <a href="#soluciones">Soluciones</a></li>
+        <li> <a href="#nuestra">Nuestra Experiencia</a></li>
+        <li> <a href="#nosotros">¿Por qué Nosotros?</a></li>
+        <li> <a href="#contacto">Contáctenos</a></li>
+      </ul>
     </div>
     <div id="pagina">
       <section id="header">
+        <div id="c-slider">
+          <div id="slider">
+            <section><img src="/img/1.png" alt=""/></section>
+            <section><img src="/img/1.png" alt=""/></section>
+            <section><img src="/img/1.png" alt=""/></section>
+            <section><img src="/img/1.png" alt=""/></section>
+          </div>
+        </div>
+        <div id="btn-prev">&#60;</div>
+        <div id="btn-next">&#62;</div>
         <article>
           <figure><a href="#"><img src="img/gestiona-b.svg" alt="Gestiona"/></a></figure>
           <h1>Lorem ipsum <br>dolor sit amet consectetur</h1>
@@ -42,15 +50,15 @@
           <ul>
             <li>
               <div class="item"></div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nistis.<a href="#">Consulta</a></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nistis.<a>Consulta</a></p>
             </li>
             <li>
               <div class="item"></div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nistis.<a href="#">Gestiona</a></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nistis.<a href="">Gestiona</a></p>
             </li>
             <li>
               <div class="item"></div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nistis.<a href="#">Proyecta</a></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nistis.<a href="">Proyecta</a></p>
             </li>
           </ul>
         </article>
@@ -74,7 +82,7 @@
             <h2>no somos gestores <br> somos <span>gestiona</span></h2>
             <ul>
               <li>Una marca enfocada en la resolución de los desafíos que el complejo marco regulatorio venezolano impone.</li>
-              <li>Años de experiencia realizando todos los trámites necesarios para la importación, exportación y comercialización de mercancías.</li>
+              <li>Tenemos años de experiencia realizando todos los trámites necesarios para la importación, exportación y comercialización de mercancías.</li>
               <li>Somos servidores, comprometidos a proveer calidad de trabajo a precios accesibles.</li>
             </ul>
           </div>
@@ -93,7 +101,53 @@
       <section id="contacto">
         <article></article>
       </section>
+      <section id="mapa">
+        <article>
+          <div id="map"></div>
+          <h2>Contáctenos</h2>
+          <p>Puede contactarnos de la siguiente manera, estaremos encantados de atenderle:</p>
+          <ul>
+            <li>
+               
+              <span>Télefono:</span> <a href="callto://+582120000000">+58 212 000 00 00</a>
+            </li>
+            <li><span>E-mail:</span> <a href="mailto:gestiona@contacto.com">gestiona@contacto.com</a></li>
+            <li>Los Samanes, Caracas, Venezuela</li>
+          </ul>
+          <article id="formulario">
+            <hr/>
+            <div class="content-form">
+              <form action="/php/send.php" name="send" method="post" class="formulario">
+                <div class="linea">
+                  <div class="input-group">
+                    <label for="nombre" class="label">Nombre o Empresa</label>
+                    <input id="nombre" type="text" name="nombre"/>
+                  </div>
+                  <div class="input-group">
+                    <label for="tel" class="label">Teléfono de contacto</label>
+                    <input id="tel" type="text" name="tel"/>
+                  </div>
+                </div>
+                <div class="linea">
+                  <div class="input-group">
+                    <label for="email" class="label">Correo Electronico</label>
+                    <input id="email" type="email" name="email"/>
+                  </div>
+                </div>
+                <div class="linea">
+                  <div class="input-group">
+                    <label for="message" class="label">Mensaje</label>
+                    <textarea id="message" name="message" wrap="hard"></textarea>
+                    <input type="submit" value="Enviar mensaje" class="boton"/>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </article>
+        </article>
+      </section>
       <footer></footer>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;callback=init"> </script>
     </div>
   </body>
 </html>
