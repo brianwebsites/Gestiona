@@ -80,8 +80,8 @@ h2 span {
   z-index: 10;
   background: transparent;
   line-height: 4em;
-  transition: 0.5s ease-out;
   top: 0;
+  transition: 0.5s ease-out;
 }
 
 #menu .menu-contenedor {
