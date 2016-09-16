@@ -81,6 +81,7 @@ h2 span {
   background: transparent;
   line-height: 4em;
   transition: 0.5s ease-out;
+  top: 0;
 }
 
 #menu .menu-contenedor {
